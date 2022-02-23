@@ -1,12 +1,18 @@
 import type { NextPage } from 'next';
+import { Fragment } from 'react';
 
 // Components
-import { Header } from '../components/organisms';
+import { Header, Footer } from '../components/organisms';
 
 import { loadItems } from '../shared/lib';
 
 const Home: NextPage = () => {
-  return <Header />;
+  return (
+    <Fragment>
+      <Header />
+      <Footer />
+    </Fragment>
+  );
 };
 
 export async function getStaticProps() {

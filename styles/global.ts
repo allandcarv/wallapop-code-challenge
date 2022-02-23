@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { lightGray } from './colors';
+import { lightGray, darkGray } from './colors';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        color: ${darkGray};
     }
 
     body {
@@ -17,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
 
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Roboto Bold', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     button {
