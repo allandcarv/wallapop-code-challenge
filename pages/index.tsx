@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 
 // Components
-import { Heading } from '../components/atoms';
+import { Header } from '../components/organisms';
+
 import { loadItems } from '../shared/lib';
 
 const Home: NextPage = () => {
-  return <Heading level="first">Wallapop Code Challenge</Heading>;
+  return <Header />;
 };
 
 export async function getStaticProps() {

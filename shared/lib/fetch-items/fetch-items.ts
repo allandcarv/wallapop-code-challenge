@@ -2,11 +2,11 @@ import axios from 'axios';
 
 import { ITEMS_ENDPOINT } from '../../constants';
 
-import { ItemsResponse } from './fetch-items.interface';
+import { IItemsResponse } from './fetch-items.interface';
 
-export const loadItems = async (): Promise<ItemsResponse> => {
+export const loadItems = async (): Promise<IItemsResponse> => {
   try {
-    const { data } = await axios.get<ItemsResponse>(ITEMS_ENDPOINT);
+    const { data } = await axios.get<IItemsResponse>(ITEMS_ENDPOINT);
 
     return { ...data };
   } catch (error) {
