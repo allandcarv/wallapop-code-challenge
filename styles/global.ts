@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
         color: ${darkGray};
     }
 
+    html, body, #__next {
+        width: 100%;
+        height: 100%;
+    }
+
     body {
         background-color: ${lightGray};
         font-family: 'Roboto', sans-serif;
@@ -26,6 +31,16 @@ const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+    }
+
+    #__next {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 15% 1fr 10%;
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
     }
 `;
 

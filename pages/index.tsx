@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { Fragment } from 'react';
 
 // Components
-import { Header, Footer } from '../components/organisms';
+import { Header, Footer, Main } from '../components/organisms';
 
 import { loadItems } from '../shared/lib';
 
@@ -10,6 +10,7 @@ const Home: NextPage = () => {
   return (
     <Fragment>
       <Header />
+      <Main />
       <Footer />
     </Fragment>
   );
