@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { lightGray } from './colors';
+
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
@@ -9,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        background-color: ${lightGray};
         font-family: 'Roboto', sans-serif;
     }
 
