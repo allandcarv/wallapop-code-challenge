@@ -1,4 +1,4 @@
-import { loadItems } from '..';
+import { loadItems } from '../index';
 
 import axios from 'axios';
 

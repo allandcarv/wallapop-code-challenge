@@ -1,1 +1,1 @@
-export * from './fetch-items';
+export * from './fetch-items/fetch-items';
