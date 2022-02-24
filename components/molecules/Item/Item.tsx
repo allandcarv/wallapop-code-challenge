@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FiMail } from 'react-icons/fi';
+import { AiOutlineMail } from 'react-icons/ai';
 
 import { Heading } from '../../atoms';
 
@@ -22,7 +22,7 @@ export const Item: React.FC<IItemComponent> = ({ item }) => {
       </section>
       <section className="actions">
         <a href={`mailto:${email}`}>
-          <FiMail size="1.5em" title="Send Email to Seller" />
+          <AiOutlineMail size="1.5em" title="Send Email to Seller" />
         </a>
       </section>
     </StyledArticle>

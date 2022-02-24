@@ -46,5 +46,13 @@ export const StyledArticle = styled.article`
     position: absolute;
     right: 0.5rem;
     top: 0.2rem;
+
+    svg {
+      transition: transform 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 `;
