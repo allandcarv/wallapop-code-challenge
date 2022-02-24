@@ -1,14 +1,16 @@
-import { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import type { AppProps } from 'next/app';
+
+import { store } from '../store';
 
 import Styles from '../styles';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Fragment>
+    <Provider store={store}>
       <Styles />
       <Component {...pageProps} />
-    </Fragment>
+    </Provider>
   );
 }
 
