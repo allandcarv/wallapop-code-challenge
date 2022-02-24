@@ -1,5 +1,7 @@
 import { IItem } from '../../../shared/interface';
 
 export interface IItemComponent {
-    item: IItem;
+  item: IItem;
+  isFavorite: boolean;
+  onFavorite: () => void;
 }

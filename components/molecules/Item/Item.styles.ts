@@ -53,6 +53,10 @@ export const StyledArticle = styled.article`
       &:hover {
         transform: scale(1.1);
       }
+
+      & + svg {
+        margin-left: 0.3rem;
+      }
     }
   }
 `;

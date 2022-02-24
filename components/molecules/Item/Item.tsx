@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 import { Heading } from '../../atoms';
 
@@ -7,7 +7,11 @@ import { IItemComponent } from './Item.interface';
 
 import { StyledArticle } from './Item.styles';
 
-export const Item: React.FC<IItemComponent> = ({ item }) => {
+export const Item: React.FC<IItemComponent> = ({
+  item,
+  isFavorite,
+  onFavorite,
+}) => {
   const { description, email, image, price, title } = item;
 
   return (
@@ -23,6 +27,19 @@ export const Item: React.FC<IItemComponent> = ({ item }) => {
       <section className="actions">
         <a href={`mailto:${email}`}>
           <AiOutlineMail size="1.5em" title="Send Email to Seller" />
+          {isFavorite ? (
+            <AiFillHeart
+              size="1.5em"
+              title="Remove from Favorites"
+              onClick={onFavorite}
+            />
+          ) : (
+            <AiOutlineHeart
+              size="1.5em"
+              title="Add to Favorites"
+              onClick={onFavorite}
+            />
+          )}
         </a>
       </section>
     </StyledArticle>
