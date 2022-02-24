@@ -4,6 +4,9 @@ const withFonts = require('next-fonts');
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['frontend-tech-test-data.s3-eu-west-1.amazonaws.com'],
+  },
 };
 
 module.exports = withFonts(nextConfig);

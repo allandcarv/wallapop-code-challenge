@@ -2,15 +2,15 @@ import type { NextPage } from 'next';
 import { Fragment } from 'react';
 
 // Components
-import { Header, Footer, Main } from '../components/organisms';
+import { Header, Footer, Items } from '../components/organisms';
 
 import { loadItems } from '../shared/lib';
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   return (
     <Fragment>
       <Header />
-      <Main />
+      <Items items={props.items} />
       <Footer />
     </Fragment>
   );

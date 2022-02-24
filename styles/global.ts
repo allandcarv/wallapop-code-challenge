@@ -1,14 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { lightGray, darkGray } from './colors';
-
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         outline: 0;
-        color: ${darkGray};
+        color: var(--dark-gray);
     }
 
     html, body, #__next {
@@ -17,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${lightGray};
+        background-color: var(--light-gray);
         font-family: 'Roboto', sans-serif;
     }
 

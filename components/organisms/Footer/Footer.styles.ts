@@ -1,23 +1,21 @@
 import styled from 'styled-components';
 
-import { blue, lightGray, gray } from '../../../styles/colors';
-
 export const StyledFooter = styled.footer`
-  grid-area: 'footer';
+  grid-area: footer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${blue};
+  background-color: var(--blue);
 
   p {
-    color: ${lightGray};
+    color: var(--light-gray);
 
     a {
-      color: ${lightGray};
+      color: var(--light-gray);
       transition: color 0.4s;
 
       &:hover {
-        color: ${gray};
+        color: var(--gray);
       }
     }
   }

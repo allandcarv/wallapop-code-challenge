@@ -1,9 +1,13 @@
-export const gray = '#5f6c7b';
+import { createGlobalStyle } from 'styled-components';
 
-export const lightGray = '#fffffe';
+const Colors = createGlobalStyle`
+    :root {
+        --gray: #5f6c7b;
+        --light-gray: #fffffe;
+        --dark-gray: #094067;
+        --blue: #3da9fc;
+        --red: #ef4565;
+    }
+`;
 
-export const darkGray = '#094067';
-
-export const blue = '#3da9fc';
-
-export const red = '#ef4565';
+export default Colors;
