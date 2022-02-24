@@ -35,10 +35,10 @@ export const StyledFooter = styled.footer`
 
       svg {
         fill: var(--light-gray);
-        transition: fill 0.4s;
+        transition: transform 0.4s;
 
         &:hover {
-          fill: var(--gray);
+          transform: scale(1.2);
         }
       }
     }
