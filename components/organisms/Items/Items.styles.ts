@@ -6,6 +6,11 @@ export const StyledMain = styled.main`
   grid-area: main;
   padding: 0.5rem;
 
+  button {
+    display: block;
+    margin: 1rem auto 0;
+  }
+
   @media only screen and (min-width: ${BREAKPOINTS.small}) {
     max-width: 80%;
     margin: auto;
