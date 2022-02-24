@@ -47,15 +47,16 @@ export const StyledArticle = styled.article`
     right: 0.5rem;
     top: 0.2rem;
 
+    a {
+      margin-right: 0.2rem;
+    }
+
     svg {
+      cursor: pointer;
       transition: transform 0.4s;
 
       &:hover {
         transform: scale(1.1);
-      }
-
-      & + svg {
-        margin-left: 0.3rem;
       }
     }
   }

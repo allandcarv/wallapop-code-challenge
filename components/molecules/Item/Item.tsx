@@ -27,20 +27,20 @@ export const Item: React.FC<IItemComponent> = ({
       <section className="actions">
         <a href={`mailto:${email}`}>
           <AiOutlineMail size="1.5em" title="Send Email to Seller" />
-          {isFavorite ? (
-            <AiFillHeart
-              size="1.5em"
-              title="Remove from Favorites"
-              onClick={onFavorite}
-            />
-          ) : (
-            <AiOutlineHeart
-              size="1.5em"
-              title="Add to Favorites"
-              onClick={onFavorite}
-            />
-          )}
         </a>
+        {isFavorite ? (
+          <AiFillHeart
+            size="1.5em"
+            title="Remove from Favorites"
+            onClick={onFavorite}
+          />
+        ) : (
+          <AiOutlineHeart
+            size="1.5em"
+            title="Add to Favorites"
+            onClick={onFavorite}
+          />
+        )}
       </section>
     </StyledArticle>
   );
