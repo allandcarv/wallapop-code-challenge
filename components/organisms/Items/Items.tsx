@@ -51,12 +51,28 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
 
   return (
     <StyledMain>
-      <Select
-        values={['title', 'description', 'email', 'price']}
-        texts={['Title', 'Description', 'Email', 'Price']}
-        id="sort-by"
-        onChange={handleSortBy}
-      />
+      <section>
+        <article className="search__by">
+          <label htmlFor="search-by">Search by:</label>
+          <div className="search__box">
+            <Select
+              values={['title', 'description', 'email', 'price']}
+              texts={['Title', 'Description', 'Email', 'Price']}
+              id="search-by"
+            />
+            <input type="text" />
+          </div>
+        </article>
+        <article className="sort__by">
+          <label htmlFor="sort-by">Sort by:</label>
+          <Select
+            values={['title', 'description', 'email', 'price']}
+            texts={['Title', 'Description', 'Email', 'Price']}
+            id="sort-by"
+            onChange={handleSortBy}
+          />
+        </article>
+      </section>
 
       {slicedItems.map((item) => (
         <Item
