@@ -4,6 +4,14 @@ import { StyledHeader } from '../Header/Header.styles';
 
 import { Header } from '..';
 
+jest.mock('../../../shared/store/hooks/index', () => ({
+  ...jest.requireActual('../../../shared/store/hooks/index'),
+  useAppDispatch: jest.fn(() => jest.fn()),
+  useAppSelector: jest.fn(() => ({
+    items: [],
+  })),
+}));
+
 jest.mock('../Header/Header.styles', () => ({
   StyledHeader: jest.fn(({ children }) => <header>{children}</header>),
 }));
