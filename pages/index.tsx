@@ -4,9 +4,15 @@ import { Fragment } from 'react';
 // Components
 import { Header, Footer, Items } from '../components/organisms';
 
+import { IItem } from '../shared/interface';
+
 import { loadItems } from '../shared/lib';
 
-const Home: NextPage = (props) => {
+interface IItemsPage {
+  items: IItem[];
+}
+
+const Home: NextPage<IItemsPage> = (props) => {
   return (
     <Fragment>
       <Header />
@@ -23,7 +29,7 @@ export async function getStaticProps() {
     props: {
       items,
     },
-    revalidate: 3600,
+    revalidate: 300, // regenerate page in 5 minutes
   };
 }
 
