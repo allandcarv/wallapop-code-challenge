@@ -1,23 +1,26 @@
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { actions } from '../../store';
 
+import { IItem } from '../../interface';
+
 import { IUseFavorites } from './use-favorites.interface';
 
 export const useFavorites = (): IUseFavorites => {
   const dispatch = useAppDispatch();
   const state = useAppSelector((state) => state.favorites);
 
-  const getFavorites = () => state.ids;
+  const getFavorites = () => state.items;
 
-  const addFavorite = (id: string) => {
-    dispatch(actions.favoritesActions.addFavorite(id));
+  const addFavorite = (item: IItem) => {
+    dispatch(actions.favoritesActions.addFavorite(item));
   };
 
-  const removeFavorite = (id: string) => {
-    dispatch(actions.favoritesActions.removeFavorite(id));
+  const removeFavorite = (title: string) => {
+    dispatch(actions.favoritesActions.removeFavorite(title));
   };
 
-  const isFavorite = (id: string) => state.ids.includes(id);
+  const isFavorite = (title: string) =>
+    state.items.some((item) => item.title === title);
 
   return {
     getFavorites,

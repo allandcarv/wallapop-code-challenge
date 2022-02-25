@@ -1,6 +1,8 @@
+import { IItem } from '../../interface';
+
 export interface IUseFavorites {
-  getFavorites: () => string[];
-  addFavorite: (id: string) => void;
-  removeFavorite: (id: string) => void;
-  isFavorite: (id: string) => boolean;
+  getFavorites: () => IItem[];
+  addFavorite: (item: IItem) => void;
+  removeFavorite: (title: string) => void;
+  isFavorite: (title: string) => boolean;
 }

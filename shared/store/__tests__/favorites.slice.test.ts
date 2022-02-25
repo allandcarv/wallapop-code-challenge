@@ -1,6 +1,22 @@
 import { favoritesSlice } from '../slices';
 
-const initialState = { ids: [] };
+const initialState = { items: [] };
+
+const firstItem = {
+  description: 'Some Description',
+  email: 'Some Email',
+  image: 'Some Image',
+  price: 'Some Price',
+  title: 'Some Title',
+};
+
+const secondItem = {
+  description: 'Some Other Description',
+  email: 'Some Other Email',
+  image: 'Some Other Image',
+  price: 'Some Other Price',
+  title: 'Some Other Title',
+};
 
 describe('favorite slice reducers', () => {
   it('should return the initial state', () => {
@@ -13,8 +29,8 @@ describe('favorite slice reducers', () => {
     const { addFavorite } = favoritesSlice.actions;
 
     expect(
-      favoritesSlice.reducer(initialState, addFavorite('Some ID')),
-    ).toEqual({ ids: ['Some ID'] });
+      favoritesSlice.reducer(initialState, addFavorite(firstItem)),
+    ).toEqual({ items: [firstItem] });
   });
 
   it('should remove a favorite', () => {
@@ -22,9 +38,9 @@ describe('favorite slice reducers', () => {
 
     expect(
       favoritesSlice.reducer(
-        { ids: ['Some ID', 'Some Other ID'] },
-        removeFavorite('Some ID'),
+        { items: [firstItem, secondItem] },
+        removeFavorite('Some Title'),
       ),
-    ).toEqual({ ids: ['Some Other ID'] });
+    ).toEqual({ items: [secondItem] });
   });
 });

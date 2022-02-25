@@ -24,11 +24,11 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
       ...items.slice(prevState.length, prevState.length + ITEMS_LIST_SLICE),
     ]);
 
-  const handleFavorite = (id: string) => {
-    if (isFavorite(id)) {
-      return removeFavorite(id);
+  const handleFavorite = (item: IItem) => {
+    if (isFavorite(item.title)) {
+      return removeFavorite(item.title);
     } else {
-      return addFavorite(id);
+      return addFavorite(item);
     }
   };
 
@@ -39,7 +39,7 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
           key={item.title}
           item={item}
           isFavorite={isFavorite(item.title)}
-          onFavorite={() => handleFavorite(item.title)}
+          onFavorite={() => handleFavorite(item)}
         />
       ))}
       {slicedItems.length < items.length && (

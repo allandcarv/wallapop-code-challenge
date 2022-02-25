@@ -1,3 +1,5 @@
+import { IItem } from '../../interface';
+
 export interface IFavoriteSlice {
-   ids: string[]
-};
+  items: IItem[];
+}
