@@ -6,7 +6,7 @@ import { Item } from '../../molecules/';
 
 import { ITEMS_LIST_SLICE } from '../../../shared/constants';
 import { IItem } from '../../../shared/interface';
-import { useFavorites } from '../../../shared/store/hooks';
+import { useFavorites } from '../../../shared/hooks';
 
 import { IItemsComponent } from './Items.interface';
 import { StyledMain } from './Items.styles';

@@ -1,12 +1,7 @@
-import { useAppDispatch, useAppSelector } from '.';
-import { actions } from '..';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { actions } from '../../store';
 
-interface IUseFavorites {
-  getFavorites: () => string[];
-  addFavorite: (id: string) => void;
-  removeFavorite: (id: string) => void;
-  isFavorite: (id: string) => boolean;
-}
+import { IUseFavorites } from './use-favorites.interface';
 
 export const useFavorites = (): IUseFavorites => {
   const dispatch = useAppDispatch();

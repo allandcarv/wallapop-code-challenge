@@ -1,15 +1,15 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 const mockedDispatch = jest.fn();
-jest.mock('../hooks/index', () => ({
-  ...jest.requireActual('../hooks/index'),
+jest.mock('../../store/hooks/index', () => ({
+  ...jest.requireActual('../../store/hooks/index'),
   useAppDispatch: jest.fn(() => mockedDispatch),
   useAppSelector: jest.fn(() => ({
     ids: ['Some ID', 'Some Other ID'],
   })),
 }));
 
-jest.mock('../index', () => ({
+jest.mock('../../store/index', () => ({
   actions: {
     favoritesActions: {
       addFavorite: jest.fn((x) => x),
@@ -18,7 +18,7 @@ jest.mock('../index', () => ({
   },
 }));
 
-import { useFavorites } from '../hooks';
+import { useFavorites } from '..';
 
 describe('useFavorites', () => {
   afterEach(jest.clearAllMocks);
