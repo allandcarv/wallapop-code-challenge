@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
-import { Heading } from '../../atoms';
-
 import { IItemComponent } from './Item.interface';
 
 import { StyledArticle } from './Item.styles';
@@ -20,7 +18,7 @@ export const Item: React.FC<IItemComponent> = ({
         <Image src={image} alt={title} layout="fill" objectFit="cover" />
       </section>
       <section className="data">
-        <Heading level="second">{title}</Heading>
+        <h2>{title}</h2>
         <p className="description">{description}</p>
         <p className="price">{`${price},00 €`}</p>
       </section>

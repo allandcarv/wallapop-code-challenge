@@ -5,10 +5,10 @@ import { StyledButton } from './Button.styles';
 const Button: React.FC<IButtonComponent> = ({
   customType,
   children,
-  onClick,
+  ...rest
 }) => {
   return (
-    <StyledButton customType={customType} onClick={onClick}>
+    <StyledButton customType={customType} {...rest}>
       {children}
     </StyledButton>
   );
