@@ -24,7 +24,7 @@ export const Item: React.FC<IItemComponent> = ({
       </section>
       <section className="actions">
         <a href={`mailto:${email}`}>
-          <AiOutlineMail size="1.5em" title="Send Email to Seller" />
+          <AiOutlineMail size="1.5em" title={`Send Email to ${email}`} />
         </a>
         {isFavorite ? (
           <AiFillHeart

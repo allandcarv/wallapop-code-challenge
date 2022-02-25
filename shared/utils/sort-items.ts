@@ -1,9 +1,14 @@
 import { IItem } from '../interface';
+import { SortByType } from '../types';
 
-type sortBy = 'price' | 'description' | 'title' | 'email';
+export const sortItems = (items: IItem[]) => (sort: SortByType) => {
+  const clonedItemsArray: IItem[] = JSON.parse(JSON.stringify(items));
 
-export const sortItems = (items: IItem[]) => (sort: sortBy) =>
-  items.sort((a, b) => {
+  clonedItemsArray.sort((a, b) => {
+    if (sort === 'price') {
+      return +a[sort] - +b[sort];
+    }
+
     if (a[sort] < b[sort]) {
       return -1;
     }
@@ -14,3 +19,6 @@ export const sortItems = (items: IItem[]) => (sort: sortBy) =>
 
     return 0;
   });
+
+  return clonedItemsArray;
+};

@@ -2,23 +2,37 @@ import { sortItems } from '..';
 
 const items = [
   {
+    title: 'D Some Title',
+    description: 'D Some Description',
+    price: '4',
+    email: 'D Some Email',
+    image: 'D Some Image',
+  },
+  {
     title: 'C Some Title',
     description: 'C Some Description',
-    price: 'C Some Price',
+    price: '3',
     email: 'C Some Email',
     image: 'C Some Image',
   },
   {
+    title: 'D Some Title',
+    description: 'D Some Description',
+    price: '4',
+    email: 'D Some Email',
+    image: 'D Some Image',
+  },
+  {
     title: 'B Some Title',
     description: 'B Some Description',
-    price: 'B Some Price',
+    price: '2',
     email: 'B Some Email',
     image: 'B Some Image',
   },
   {
     title: 'A Some Title',
     description: 'A Some Description',
-    price: 'A Some Price',
+    price: '1',
     email: 'A Some Email',
     image: 'A Some Image',
   },
@@ -28,23 +42,37 @@ const expectedResult = [
   {
     title: 'A Some Title',
     description: 'A Some Description',
-    price: 'A Some Price',
+    price: '1',
     email: 'A Some Email',
     image: 'A Some Image',
   },
   {
     title: 'B Some Title',
     description: 'B Some Description',
-    price: 'B Some Price',
+    price: '2',
     email: 'B Some Email',
     image: 'B Some Image',
   },
   {
     title: 'C Some Title',
     description: 'C Some Description',
-    price: 'C Some Price',
+    price: '3',
     email: 'C Some Email',
     image: 'C Some Image',
+  },
+  {
+    title: 'D Some Title',
+    description: 'D Some Description',
+    price: '4',
+    email: 'D Some Email',
+    image: 'D Some Image',
+  },
+  {
+    title: 'D Some Title',
+    description: 'D Some Description',
+    price: '4',
+    email: 'D Some Email',
+    image: 'D Some Image',
   },
 ];
 
