@@ -7,16 +7,19 @@ import { Item } from '../../molecules/';
 import { ITEMS_LIST_SLICE } from '../../../shared/constants';
 import { IItem } from '../../../shared/interface';
 import { useFavorites } from '../../../shared/hooks';
-import { sortItems } from '../../../shared/utils';
+import { searchItems, sortItems } from '../../../shared/utils';
+import { SortByType } from '../../../shared/types';
 
 import { IItemsComponent } from './Items.interface';
 import { StyledMain } from './Items.styles';
 
 const Items: React.FC<IItemsComponent> = ({ items }) => {
-  const sortedItemsFn = sortItems(items);
+  const searchItemsFn = searchItems(items);
 
+  const [searchBy, setSearchBy] = useState<SortByType>('title');
+  const [sortBy, setSortBy] = useState<SortByType>('title');
   const [sortedItems, setSortedItems] = useState<IItem[]>(
-    sortedItemsFn('title'),
+    sortItems(items)('title'),
   );
   const [slicedItems, setSlicedItems] = useState<IItem[]>(
     sortedItems.slice(0, ITEMS_LIST_SLICE),
@@ -42,7 +45,17 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
   };
 
   const handleSortBy = (event: BaseSyntheticEvent) => {
-    setSortedItems(sortedItemsFn(event.target.value));
+    setSortBy(event.target.value);
+    setSortedItems(sortItems(sortedItems)(event.target.value));
+  };
+
+  const handleSearchBy = (event: BaseSyntheticEvent) => {
+    setSearchBy(event.target.value);
+  };
+
+  const handleSearchInput = (event: BaseSyntheticEvent) => {
+    const itemsFound = searchItemsFn(searchBy)(event.target.value.trim());
+    setSortedItems(sortItems(itemsFound)(sortBy));
   };
 
   useEffect(() => {
@@ -58,9 +71,11 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
             <Select
               values={['title', 'description', 'email', 'price']}
               texts={['Title', 'Description', 'Email', 'Price']}
+              value={searchBy}
+              onChange={handleSearchBy}
               id="search-by"
             />
-            <input type="text" />
+            <input type="text" onChange={handleSearchInput} />
           </div>
         </article>
         <article className="sort__by">
@@ -68,6 +83,7 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
           <Select
             values={['title', 'description', 'email', 'price']}
             texts={['Title', 'Description', 'Email', 'Price']}
+            value={sortBy}
             id="sort-by"
             onChange={handleSortBy}
           />
@@ -82,7 +98,7 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
           onFavorite={() => handleFavorite(item)}
         />
       ))}
-      {slicedItems.length < items.length && (
+      {slicedItems.length < sortedItems.length && (
         <Button customType="fill" onClick={handleButtonClick}>
           Show More
         </Button>

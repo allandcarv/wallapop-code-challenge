@@ -106,6 +106,10 @@ export const StyledMain = styled.main`
     max-width: 60%;
 
     > section {
+      label {
+        font-size: 1.2rem;
+      }
+
       article {
         &.sort__by {
           width: 20%;
