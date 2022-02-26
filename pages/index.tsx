@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import { Fragment } from 'react';
 
 // Components
@@ -15,6 +16,14 @@ interface IItemsPage {
 const Home: NextPage<IItemsPage> = (props) => {
   return (
     <Fragment>
+      <Head>
+        <title>Wallapop Code Challenge</title>
+        <meta
+          property="og:title"
+          content="Wallapop Code Challenge"
+          key="title"
+        />
+      </Head>
       <Header />
       <Items items={props.items} />
       <Footer />
