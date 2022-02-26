@@ -99,14 +99,17 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
         </p>
       )}
 
-      {slicedItems.map((item) => (
-        <Item
-          key={item.title}
-          item={item}
-          isFavorite={isFavorite(item.title)}
-          onFavorite={() => handleFavorite(item)}
-        />
-      ))}
+      <ul>
+        {slicedItems.map((item) => (
+          <Item
+            key={item.title}
+            item={item}
+            isFavorite={isFavorite(item.title)}
+            onFavorite={() => handleFavorite(item)}
+          />
+        ))}
+      </ul>
+
       {slicedItems.length < sortedItems.length && (
         <Button customType="fill" onClick={handleButtonClick}>
           Show More

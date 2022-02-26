@@ -1,6 +1,7 @@
-import { IItem } from '../../../shared/interface';
+import { LiHTMLAttributes } from 'react';
 
-export interface IItemComponent {
+import { IItem } from '../../../shared/interface';
+export interface IItemComponent extends LiHTMLAttributes<HTMLLIElement> {
   item: IItem;
   isFavorite: boolean;
   onFavorite: () => void;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import BREAKPOINTS from '../../../styles/breakpoints';
 
-export const StyledArticle = styled.article`
+export const StyledLi = styled.li`
   display: flex;
   width: 100%;
   height: 8rem;
@@ -12,7 +12,7 @@ export const StyledArticle = styled.article`
   border-radius: 0.5rem;
   background-color: var(--light-gray);
 
-  & + article {
+  & + li {
     margin-top: 1rem;
   }
 

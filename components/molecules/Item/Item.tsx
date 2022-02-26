@@ -3,17 +3,18 @@ import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 import { IItemComponent } from './Item.interface';
 
-import { StyledArticle } from './Item.styles';
+import { StyledLi } from './Item.styles';
 
 export const Item: React.FC<IItemComponent> = ({
   item,
   isFavorite,
   onFavorite,
+  ...rest
 }) => {
   const { description, email, image, price, title } = item;
 
   return (
-    <StyledArticle>
+    <StyledLi {...rest}>
       <section className="image">
         <Image src={image} alt={title} layout="fill" objectFit="cover" />
       </section>
@@ -40,7 +41,7 @@ export const Item: React.FC<IItemComponent> = ({
           />
         )}
       </section>
-    </StyledArticle>
+    </StyledLi>
   );
 };
 
