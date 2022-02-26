@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 // Components
-import { Header, Footer, Items } from '../components/organisms';
+import { Header, Footer, Items, Modal } from '../components/organisms';
 
 import { IItem } from '../shared/interface';
 
@@ -14,6 +14,8 @@ interface IItemsPage {
 }
 
 const Home: NextPage<IItemsPage> = (props) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <Fragment>
       <Head>
@@ -24,7 +26,12 @@ const Home: NextPage<IItemsPage> = (props) => {
           key="title"
         />
       </Head>
-      <Header />
+      <Modal
+        isOpen={openModal}
+        closeModal={() => setOpenModal(false)}
+        title="Favorite Items"
+      />
+      <Header onGenericAction={() => setOpenModal(true)} />
       <Items items={props.items} />
       <Footer />
     </Fragment>
