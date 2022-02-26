@@ -1,4 +1,5 @@
 import { useState, useEffect, BaseSyntheticEvent } from 'react';
+import { BiSad } from 'react-icons/bi';
 
 import { Button, Select } from '../../atoms';
 
@@ -86,9 +87,17 @@ const Items: React.FC<IItemsComponent> = ({ items }) => {
             value={sortBy}
             id="sort-by"
             onChange={handleSortBy}
+            disabled={!slicedItems.length}
           />
         </article>
       </section>
+
+      {!slicedItems.length && (
+        <p className="no__results">
+          <BiSad size={'1.5rem'} />
+          <strong>No results found...</strong>
+        </p>
+      )}
 
       {slicedItems.map((item) => (
         <Item

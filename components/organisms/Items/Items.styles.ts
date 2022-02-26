@@ -64,6 +64,24 @@ export const StyledMain = styled.main`
     }
   }
 
+  p.no__results {
+    text-align: center;
+    margin-top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: var(--red);
+      margin-right: 0.2rem;
+    }
+
+    strong {
+      color: var(--red);
+      font-size: 1.5rem;
+    }
+  }
+
   > button {
     display: block;
     margin: 1rem auto 0;
@@ -100,6 +118,10 @@ export const StyledMain = styled.main`
           font-size: 1rem;
         }
       }
+    }
+
+    p.no__results {
+      margin-top: 30%;
     }
   }
 

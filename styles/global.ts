@@ -27,8 +27,12 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    button {
+    button, select {
         cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
     }
 
     #__next {
