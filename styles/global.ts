@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     #__next {
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 15% 1fr 10%;
+        grid-template-rows: 15% 1fr 15%;
         grid-template-areas:
             'header'
             'main'
