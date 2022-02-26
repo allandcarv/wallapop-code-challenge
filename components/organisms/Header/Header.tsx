@@ -14,7 +14,11 @@ const Header: React.FC<IHeaderComponent> = ({ onGenericAction }) => {
     <StyledHeader>
       <section className="container">
         <h1>ITEM MANAGER</h1>
-        <Button customType="outline" onClick={onGenericAction}>
+        <Button
+          customType="outline"
+          onClick={onGenericAction}
+          disabled={!favorites}
+        >
           Favorites: {favorites}
         </Button>
       </section>

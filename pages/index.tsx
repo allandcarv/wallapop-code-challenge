@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Fragment, useState } from 'react';
 
 // Components
-import { Header, Footer, Items, Modal } from '../components/organisms';
+import { Header, Footer, Items, FavoritesModal } from '../components/organisms';
 
 import { IItem } from '../shared/interface';
 
@@ -26,10 +26,9 @@ const Home: NextPage<IItemsPage> = (props) => {
           key="title"
         />
       </Head>
-      <Modal
+      <FavoritesModal
         isOpen={openModal}
         closeModal={() => setOpenModal(false)}
-        title="Favorite Items"
       />
       <Header onGenericAction={() => setOpenModal(true)} />
       <Items items={props.items} />
@@ -45,7 +44,7 @@ export async function getStaticProps() {
     props: {
       items,
     },
-    revalidate: 300, // regenerate page in 5 minutes
+    revalidate: 300, // regenerate page every 5 minutes
   };
 }
 

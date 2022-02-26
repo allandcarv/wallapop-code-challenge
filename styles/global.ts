@@ -35,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    ul {
+        list-style-type: none;
+    }
+    
     #__next {
         display: grid;
         grid-template-columns: auto;
