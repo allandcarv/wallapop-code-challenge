@@ -70,7 +70,8 @@ export const StyledMain = styled.main`
   }
 
   @media only screen and (min-width: ${BREAKPOINTS.small}) {
-    max-width: 80%;
+    width: 80%;
+    height: 100%;
     margin: auto;
 
     > section {
