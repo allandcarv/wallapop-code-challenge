@@ -67,8 +67,10 @@ export const StyledMain = styled.main`
   }
 
   p.no__results {
-    text-align: center;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg {
       fill: var(--red);

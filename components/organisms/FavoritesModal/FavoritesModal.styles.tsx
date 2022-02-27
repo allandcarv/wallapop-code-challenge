@@ -6,10 +6,10 @@ export const FavoritesModalContainer = styled.section`
   flex-direction: column;
 
   p {
-    text-align: center;
     margin: auto;
-    display: block;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg {
       fill: var(--red);
