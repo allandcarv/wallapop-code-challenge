@@ -15,9 +15,11 @@ const FavoritesModal: React.FC<IFavoritesModalComponent> = ({
 }) => {
   const { getFavorites, removeFavorite } = useFavorites();
 
+  if (!isOpen) return null;
+
   const favorites = sortItems(getFavorites())('title');
 
-  return isOpen ? (
+  return (
     <Modal title="Favorite Items" closeModal={closeModal}>
       <FavoritesModalContainer>
         {!favorites.length && (
@@ -40,7 +42,7 @@ const FavoritesModal: React.FC<IFavoritesModalComponent> = ({
         )}
       </FavoritesModalContainer>
     </Modal>
-  ) : null;
+  );
 };
 
 export default FavoritesModal;
