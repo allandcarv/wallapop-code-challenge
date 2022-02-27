@@ -4,6 +4,8 @@ import BREAKPOINTS from '../../../styles/breakpoints';
 
 export const StyledMain = styled.main`
   grid-area: main;
+  display: flex;
+  flex-direction: column;
   padding: 0.5rem;
 
   > section {
@@ -66,7 +68,7 @@ export const StyledMain = styled.main`
 
   p.no__results {
     text-align: center;
-    margin-top: 50%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
