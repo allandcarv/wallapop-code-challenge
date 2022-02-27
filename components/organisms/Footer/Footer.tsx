@@ -13,11 +13,7 @@ const Footer: React.FC = () => {
         Developed by <strong>Allan Carvalho</strong>
       </p>
       <section>
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/allandc/"
-          rel="noreferrer"
-        >
+        <a target="_blank" href="mailto:allandcarv@gmail.com" rel="noreferrer">
           <AiOutlineMail size="1.5em" title="Send Email to Allan Carvalho" />
         </a>
 
