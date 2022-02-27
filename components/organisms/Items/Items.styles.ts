@@ -69,9 +69,6 @@ export const StyledMain = styled.main`
   p.no__results {
     text-align: center;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     svg {
       fill: var(--red);
@@ -120,10 +117,6 @@ export const StyledMain = styled.main`
           font-size: 1rem;
         }
       }
-    }
-
-    p.no__results {
-      margin-top: 30%;
     }
   }
 

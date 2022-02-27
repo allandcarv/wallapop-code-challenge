@@ -1,25 +1,24 @@
 import styled from 'styled-components';
 
-import BREAKPOINTS from '../../../styles/breakpoints';
-
-export const NoFavoritesMsg = styled.p`
-  text-align: center;
-  margin-top: 50%;
+export const FavoritesModalContainer = styled.section`
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 
-  svg {
-    fill: var(--red);
-    margin-right: 0.2rem;
-  }
+  p {
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 100%;
 
-  strong {
-    color: var(--red);
-    font-size: 1rem;
-  }
+    svg {
+      fill: var(--red);
+      margin-right: 0.2rem;
+    }
 
-  @media only screen and (min-width: ${BREAKPOINTS.small}) {
-    margin-top: 25%;
+    strong {
+      color: var(--red);
+      font-size: 1rem;
+    }
   }
 `;
