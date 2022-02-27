@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 import { IItemComponent } from './Item.interface';
-
 import { StyledLi } from './Item.styles';
 
 export const Item: React.FC<IItemComponent> = ({

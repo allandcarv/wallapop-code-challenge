@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Fragment, useState } from 'react';
 
 // Components
+import { ScrollToTop } from '../components/atoms';
 import { Header, Footer, Items, FavoritesModal } from '../components/organisms';
 
 import { IItem } from '../shared/interface';
@@ -15,6 +16,7 @@ interface IItemsPage {
 
 const Home: NextPage<IItemsPage> = (props) => {
   const [openModal, setOpenModal] = useState(false);
+  const isDocumentRendered = typeof window !== 'undefined';
 
   return (
     <Fragment>
@@ -33,6 +35,7 @@ const Home: NextPage<IItemsPage> = (props) => {
       <Header onGenericAction={() => setOpenModal(true)} />
       <Items items={props.items} />
       <Footer />
+      {isDocumentRendered && <ScrollToTop />}
     </Fragment>
   );
 };
